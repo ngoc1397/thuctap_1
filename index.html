@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="grid.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./script.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="modal-overlay" id="modal-img">
+        <button title="Previous" id="btn-pre">
+        </button>
+        <button title="Next" id="btn-next">
+        </button>
+        <div class="modal-img-img">
+            <div class="close-img-button" id="btn-close-img">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="512px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve"><path d="M443.6,387.1L312.4,255.4l131.5-130c5.4-5.4,5.4-14.2,0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4  L256,197.8L124.9,68.3c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4L68,105.9c-5.4,5.4-5.4,14.2,0,19.6l131.5,130L68.4,387.1  c-2.6,2.6-4.1,6.1-4.1,9.8c0,3.7,1.4,7.2,4.1,9.8l37.4,37.6c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1L256,313.1l130.7,131.1  c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1l37.4-37.6c2.6-2.6,4.1-6.1,4.1-9.8C447.7,393.2,446.2,389.7,443.6,387.1z"/></svg>
+            </div>
+            <img src="./img/item/4.jpg">
+            <div class="modal-img-img-footer">
+                <span id="num-of"></span>
+                <span>of</span>
+                <span id="total"></span>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="modal-video">
+        <div class="modal-video" id="modal-video-frame">
+            <div class="close-video-button" id="btn-close-video">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="512px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve"><path d="M443.6,387.1L312.4,255.4l131.5-130c5.4-5.4,5.4-14.2,0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4  L256,197.8L124.9,68.3c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4L68,105.9c-5.4,5.4-5.4,14.2,0,19.6l131.5,130L68.4,387.1  c-2.6,2.6-4.1,6.1-4.1,9.8c0,3.7,1.4,7.2,4.1,9.8l37.4,37.6c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1L256,313.1l130.7,131.1  c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1l37.4-37.6c2.6-2.6,4.1-6.1,4.1-9.8C447.7,393.2,446.2,389.7,443.6,387.1z"/></svg>
+            </div>
+            <iframe width="900" height="506" src="https://www.youtube.com/embed/0mVbNp1ol_w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="modal-overlay" id="modal-news">
+        <div class="close-button" id="btn-close-news">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="512px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve"><path d="M443.6,387.1L312.4,255.4l131.5-130c5.4-5.4,5.4-14.2,0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4  L256,197.8L124.9,68.3c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4L68,105.9c-5.4,5.4-5.4,14.2,0,19.6l131.5,130L68.4,387.1  c-2.6,2.6-4.1,6.1-4.1,9.8c0,3.7,1.4,7.2,4.1,9.8l37.4,37.6c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1L256,313.1l130.7,131.1  c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1l37.4-37.6c2.6-2.6,4.1-6.1,4.1-9.8C447.7,393.2,446.2,389.7,443.6,387.1z"/></svg>
+        </div>
+        <div class="modal modal-news">
+            <div class="modal-news-img">
+                <img src="./img/news/1.jpg" id="news-img" />
+            </div>
+            <div class="modal-news-des">
+                <div>By Alex Watson | 10 may 2021</div>
+                <div class="line"></div>
+            </div>
+            <div class="modal-news-content">
+                <div class="modal-news-header">
+                    Developers watch out for these burnout symptoms
+                </div>
+                <div class="modal-news-header-2">
+                    Just because we can't get out and about like we normally would, doesn’t mean we have to stop taking pictures. There’s still plenty you can do, provided you're prepared to use some imagination. Here are a few ideas to keep you shooting until normal life
+                    resumes.
+                </div>
+                <div>
+                    Most photographers love to shoot the unusual, and you don’t get much more unusual than These Unprecedented Times. Right now everything counts as out of the ordinary. There are a number of remarkable things about these lockdown days that are worth photographing
+                    now so we can remember them when it is all over.
+                </div>
+                <div>
+                    Streets empty that are usually busy are remarkable and can evoke the sense of historical pictures from before the invention of the motorcar. Other things that are different at the moment will be queues to get into stores and the lines marked out on the
+                    floor to show how far apart we should be.
+                </div>
+                <div class="modal-news-quote">
+                    <div class="modal-news-quote-img">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="475.082px" height="475.081px" viewBox="0 0 475.082 475.081" style="enable-background:new 0 0 475.082 475.081;" xml:space="preserve"
+                            class="svg replaced-svg"> <g> <g> <path d="M164.454,36.547H54.818c-15.229,0-28.171,5.33-38.832,15.987C5.33,63.193,0,76.135,0,91.365v109.632    c0,15.229,5.327,28.169,15.986,38.826c10.66,10.656,23.606,15.988,38.832,15.988h63.953c7.611,0,14.084,2.666,19.414,7.994    c5.33,5.325,7.994,11.8,7.994,19.417v9.131c0,20.177-7.139,37.397-21.413,51.675c-14.275,14.271-31.499,21.409-51.678,21.409    H54.818c-4.952,0-9.233,1.813-12.851,5.427c-3.615,3.614-5.424,7.898-5.424,12.847v36.549c0,4.941,1.809,9.233,5.424,12.848    c3.621,3.613,7.898,5.427,12.851,5.427h18.271c19.797,0,38.688-3.86,56.676-11.566c17.987-7.707,33.546-18.131,46.68-31.265    c13.131-13.135,23.553-28.691,31.261-46.679c7.707-17.987,11.562-36.877,11.562-56.671V91.361c0-15.23-5.33-28.171-15.987-38.828    S179.679,36.547,164.454,36.547z"></path> <path d="M459.089,52.534c-10.656-10.657-23.599-15.987-38.828-15.987H310.629c-15.229,0-28.171,5.33-38.828,15.987    c-10.656,10.66-15.984,23.601-15.984,38.831v109.632c0,15.229,5.328,28.169,15.984,38.826    c10.657,10.656,23.6,15.988,38.828,15.988h63.953c7.611,0,14.089,2.666,19.418,7.994c5.324,5.328,7.994,11.8,7.994,19.417v9.131    c0,20.177-7.139,37.397-21.416,51.675c-14.274,14.271-31.494,21.409-51.675,21.409h-18.274c-4.948,0-9.233,1.813-12.847,5.427    c-3.617,3.614-5.428,7.898-5.428,12.847v36.549c0,4.941,1.811,9.233,5.428,12.848c3.613,3.613,7.898,5.427,12.847,5.427h18.274    c19.794,0,38.684-3.86,56.674-11.566c17.984-7.707,33.541-18.131,46.676-31.265c13.134-13.135,23.562-28.695,31.265-46.679    c7.706-17.983,11.563-36.877,11.563-56.671V91.361C475.078,76.131,469.753,63.19,459.089,52.534z"></path> </g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>
+                    </div>
+                    <div class="modal-news-quote-text">
+                        Most photographers find it hard to see interesting pictures in places in which they are most familiar. A trip somewhere new seems always exactly what our photography needed, as shooting away from home consistently inspires us to new artistic heights.
+                    </div>
+                </div>
+                <div>
+                    Most photographers love to shoot the unusual, and you don’t get much more unusual than These Unprecedented Times. Right now everything counts as out of the ordinary. There are a number of remarkable things about these lockdown days that are worth photographing
+                    now so we can remember them when it is all over.
+                </div>
+                <div>
+                    Streets empty that are usually busy are remarkable and can evoke the sense of historical pictures from before the invention of the motorcar. Other things that are different at the moment will be queues to get into stores and the lines marked out on the
+                    floor to show how far apart we should be.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="modal-more">
+        <div class="close-button" id="btn-close-more">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="512px" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve"><path d="M443.6,387.1L312.4,255.4l131.5-130c5.4-5.4,5.4-14.2,0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4  L256,197.8L124.9,68.3c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4L68,105.9c-5.4,5.4-5.4,14.2,0,19.6l131.5,130L68.4,387.1  c-2.6,2.6-4.1,6.1-4.1,9.8c0,3.7,1.4,7.2,4.1,9.8l37.4,37.6c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1L256,313.1l130.7,131.1  c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1l37.4-37.6c2.6-2.6,4.1-6.1,4.1-9.8C447.7,393.2,446.2,389.7,443.6,387.1z"/></svg>
+        </div>
+        <div class="modal modal-more">
+            <div class="more-skill">
+                <div class="program-skill">
+                    <div class="skill-header">
+                        Programming Skills
+                    </div>
+                    <div class="skill-percent">
+                        <div class="skill-percent-top">
+                            <div>
+                                Wordpress & PHP
+                            </div>
+                            <div>
+                                95%
+                            </div>
+                        </div>
+                        <div class="skill-percent-bottom">
+                            <div class="skill-line">
+                                <div class="skill-line-percent" id="php">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-percent">
+                        <div class="skill-percent-top">
+                            <div>
+                                JavaScript & React
+                            </div>
+                            <div>
+                                80%
+                            </div>
+                        </div>
+                        <div class="skill-percent-bottom">
+                            <div class="skill-line">
+                                <div class="skill-line-percent" id="react">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-percent">
+                        <div class="skill-percent-top">
+                            <div>
+                                HTML & CSS
+                            </div>
+                            <div>
+                                90%
+                            </div>
+                        </div>
+                        <div class="skill-percent-bottom">
+                            <div class="skill-line">
+                                <div class="skill-line-percent" id="html">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lang-skill">
+                    <div class="skill-header">
+                        Language Skills
+                    </div>
+                    <div class="skill-percent">
+                        <div class="skill-percent-top">
+                            <div>
+                                English
+                            </div>
+                            <div>
+                                95%
+                            </div>
+                        </div>
+                        <div class="skill-percent-bottom">
+                            <div class="skill-line">
+                                <div class="skill-line-percent" id="php">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-percent">
+                        <div class="skill-percent-top">
+                            <div>
+                                Japanese
+                            </div>
+                            <div>
+                                90%
+                            </div>
+                        </div>
+                        <div class="skill-percent-bottom">
+                            <div class="skill-line">
+                                <div class="skill-line-percent" id="japan">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-percent">
+                        <div class="skill-percent-top">
+                            <div>
+                                Arabian
+                            </div>
+                            <div>
+                                85%
+                            </div>
+                        </div>
+                        <div class="skill-percent-bottom">
+                            <div class="skill-line">
+                                <div class="skill-line-percent" id="abra">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="more-fact">
+                <div class="more-fact-header">
+                    Fun Facts
+                </div>
+                <div class="more-fact-content">
+                    <div class="fact-item">
+                        <div class="fact-item-header">
+                            777+
+                        </div>
+                        <div class="fact-item-content">
+                            Project Completed
+                        </div>
+                    </div>
+                    <div class="fact-item">
+                        <div class="fact-item-header">
+                            3K+
+                        </div>
+                        <div class="fact-item-content">
+                            Happy Clients
+                        </div>
+                    </div>
+                    <div class="fact-item">
+                        <div class="fact-item-header">
+                            9K+
+                        </div>
+                        <div class="fact-item-content">
+                            Lines Of Code
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="more-partner">
+                <div class="more-fact-header">
+                    Our Partners
+                </div>
+                <div class="more-partner-content">
+                    <img src="./img/partner/1.png" />
+                    <img src="./img/partner/2.png" />
+                    <img src="./img/partner/3.png" />
+                    <!-- <img src="./img/partner/3.png" />
+                    <img src="./img/partner/3.png" />
+                    <img src="./img/partner/3.png" /> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="option-button">
+        <img src="./img/setting.png" />
+    </div>
+    <div class="background">
+        <div class="background-img">
+            <img src="./img/background/1.jpg" alt="">
+        </div>
+        <div class="header">
+            <div class="wrapper">
+                <div class="logo">
+                    <img src="./img/dark.png" />
+                </div>
+                <ul class="menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#detail">About</a></li>
+                    <li><a href="#feature">Portfolio</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="menu-icon">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+            </div>
+        </div>
+        <div class="intro">
+            <div class="wrapper">
+                <div class="intro-name">
+                    BERNARD
+                </div>
+                <div class="intro-address">
+                    SYDNEY
+                </div>
+                <div class="intro-detail">
+                    Creative Web & App Developer
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="detail" id="detail">
+        <div class="wrapper">
+            <div class="detail-img">
+                <img src="./img/user/2.jpg" />
+            </div>
+            <div class="detail-content">
+                <div class="detail-content-header">
+                    <div class="detail-header-about">
+                        ABOUT
+                    </div>
+                    <div class="detail-header-detail">
+                        Creative Web & App Developer
+                    </div>
+                    <div class="detail-header-name">
+                        BERNARD SYDNEY
+                    </div>
+                </div>
+                <div class="line"></div>
+                <div class="detail-content-intro">
+                    <p>
+                        My name is Bernard Sydney. I am a Web Developer, and I'm very passionate and dedicated to my work.
+                    </p>
+                    <p>
+                        With 20 years experience as a professional Web developer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion and collaboration.
+                    </p>
+                </div>
+                <div class="detail-content-more">
+                    <button id="btn-learn-more">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="service" id="service">
+        <div class="wrapper">
+            <div class="service-item l-4">
+                <div class="item-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 -35 511.99993 511" class="svg replaced-svg"><path d="m121.453125 253.171875 63.554687 158.886719 82.75-82.753906 141.535157 112.503906 102.707031-441.308594-512 205.480469zm-39.933594-47.640625 244.046875-97.945312-194.074218 117.363281zm287.535157-89.25-161.980469 148.1875-19.484375 73.425781-36.035156-90.085937zm-149.851563 219.230469 9.816406-36.996094 15.144531 12.035156zm171.65625 53.394531-147.386719-117.152344 221.902344-203.007812zm0 0"></path></svg>
+                </div>
+                <div class="item-detail">
+                    <div class="item-detail-header">
+                        Brand Identity
+                    </div>
+                    <div class="item-detail-content">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam dolorum a error id corporis at quia veritatis...
+                    </div>
+                </div>
+            </div>
+            <div class="service-item l-4">
+                <div class="item-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" class="svg replaced-svg"> <g> <g> <path d="M0,0v512h512V0H0z M482,482H30V30h452V482z"></path> </g> </g> <g> <g> <path d="M213.102,181.6h-72.24V352h33.12v-57.12h40.32c29.531,0,53.04-25.713,53.04-56.64 C267.342,212,246.166,181.6,213.102,181.6z M212.382,265.84h-38.4v-55.2h36.96c14.057,0,22.8,13.2,22.8,27.6 C233.742,255,224,265.84,212.382,265.84z"></path> </g> </g> <g> <g> <path d="M336.939,276.64c-4.642-1.118-24.72-4.39-24.72-15.84c0-9.175,7.531-14.16,19.2-14.16c15.831,0,30.079,9.12,36.48,13.92 l12.96-19.44c-6.881-6.079-21.609-17.28-49.2-17.28c-26.284,0-49.44,14.91-49.44,41.52c0,27.64,36.72,32.801,44.88,35.04 c9.757,2.723,27.6,6.225,27.6,17.04c0,8.81-8.449,13.92-20.64,13.92c-18.809,0-36.48-11.119-44.16-16.56l-12,20.16 c7.2,6.24,27.851,19.44,56.88,19.44c15.679,0,50.88-4.9,50.88-39.84C385.659,285,345.579,278.882,336.939,276.64z"></path> </g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>
+                </div>
+                <div class="item-detail">
+                    <div class="item-detail-header">
+                        Adobe Photoshop
+                    </div>
+                    <div class="item-detail-content">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam dolorum a error id corporis at quia veritatis...
+                    </div>
+                </div>
+            </div>
+            <div class="service-item l-4">
+                <div class="item-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" class="svg replaced-svg"> <g> <g> <path d="M0,15.845v420.259h164.332v30.049h-30.036v30.001h243.407v-30.001h-30.036v-30.049H512V15.845H0z M317.665,466.153    H194.334v-30.049h123.332V466.153z M481.999,406.103H30.001v-60.075h451.997V406.103z M481.999,316.027H30.001V45.847h451.997    V316.027z"></path> </g> </g> <g> <g> <polygon points="203.943,126.712 182.729,105.498 107.29,180.937 182.729,256.375 203.943,235.161 149.718,180.937   "></polygon> </g> </g> <g> <g> <polygon points="329.271,105.498 308.057,126.712 362.282,180.937 308.057,235.161 329.271,256.375 404.709,180.937   "></polygon> </g> </g> <g> <g> <rect x="166.742" y="165.947" transform="matrix(0.1951 -0.9808 0.9808 0.1951 28.5815 396.7237)" width="178.511" height="30.002"></rect> </g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>
+                </div>
+                <div class="item-detail">
+                    <div class="item-detail-header">
+                        Web Development
+                    </div>
+                    <div class="item-detail-content">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam dolorum a error id corporis at quia veritatis...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="feature" id="feature">
+        <div class="wrapper">
+            <div class="feature-header">
+                PORTFOLIO
+                <div class="feature-header-content">
+                    FEATURED WORK
+                </div>
+            </div>
+            <div class="feature-content">
+                <div class="item l-4" id="open-video-1">
+                    <div class="item-img">
+                        <img src="./img/item/1.jpg" />
+                    </div>
+                    <div class="item-header">
+                        Sweet Cherry
+                    </div>
+                    <div class="item-des">
+                        Vimeo
+                    </div>
+                </div>
+                <div class="item l-4" id="open-video-2">
+                    <div class="item-img">
+                        <img src="./img/item/2.jpg" />
+                    </div>
+                    <div class="item-header">
+                        Sweet Cherry
+                    </div>
+                    <div class="item-des">
+                        Vimeo
+                    </div>
+                </div>
+                <div class="item l-4" id="open-video-3">
+                    <div class="item-img">
+                        <img src="./img/item/3.jpg" />
+                    </div>
+                    <div class="item-header">
+                        Sweet Cherry
+                    </div>
+                    <div class="item-des">
+                        Vimeo
+                    </div>
+                </div>
+                <div class="item l-4" id="open-img-1">
+                    <div class="item-img">
+                        <img src="./img/item/4.jpg" />
+                    </div>
+                    <div class="item-header">
+                        Sweet Cherry
+                    </div>
+                    <div class="item-des">
+                        Vimeo
+                    </div>
+                </div>
+                <div class="item l-4" id="open-img-2">
+                    <div class="item-img">
+                        <img src="./img/item/5.jpg" />
+                    </div>
+                    <div class="item-header">
+                        Sweet Cherry
+                    </div>
+                    <div class="item-des">
+                        Vimeo
+                    </div>
+                </div>
+                <div class="item l-4" id="open-img-3">
+                    <div class="item-img">
+                        <img src="./img/item/6.jpg" />
+                    </div>
+                    <div class="item-header">
+                        Sweet Cherry
+                    </div>
+                    <div class="item-des">
+                        Vimeo
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="test" id="client">
+        <div class="wrapper">
+            <div class="feature-header">
+                TESTIMONIAL
+                <div class="feature-header-content">
+                    WHAT CLIENTS SAY
+                </div>
+            </div>
+            <div class="test-content">
+                <div class="test-content-left">
+                    <div class="test-content-logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="475.082px" height="475.081px" viewBox="0 0 475.082 475.081" style="enable-background:new 0 0 475.082 475.081;" xml:space="preserve"
+                            class="svg replaced-svg"> <g> <g> <path d="M164.454,36.547H54.818c-15.229,0-28.171,5.33-38.832,15.987C5.33,63.193,0,76.135,0,91.365v109.632    c0,15.229,5.327,28.169,15.986,38.826c10.66,10.656,23.606,15.988,38.832,15.988h63.953c7.611,0,14.084,2.666,19.414,7.994    c5.33,5.325,7.994,11.8,7.994,19.417v9.131c0,20.177-7.139,37.397-21.413,51.675c-14.275,14.271-31.499,21.409-51.678,21.409    H54.818c-4.952,0-9.233,1.813-12.851,5.427c-3.615,3.614-5.424,7.898-5.424,12.847v36.549c0,4.941,1.809,9.233,5.424,12.848    c3.621,3.613,7.898,5.427,12.851,5.427h18.271c19.797,0,38.688-3.86,56.676-11.566c17.987-7.707,33.546-18.131,46.68-31.265    c13.131-13.135,23.553-28.691,31.261-46.679c7.707-17.987,11.562-36.877,11.562-56.671V91.361c0-15.23-5.33-28.171-15.987-38.828    S179.679,36.547,164.454,36.547z"></path> <path d="M459.089,52.534c-10.656-10.657-23.599-15.987-38.828-15.987H310.629c-15.229,0-28.171,5.33-38.828,15.987    c-10.656,10.66-15.984,23.601-15.984,38.831v109.632c0,15.229,5.328,28.169,15.984,38.826    c10.657,10.656,23.6,15.988,38.828,15.988h63.953c7.611,0,14.089,2.666,19.418,7.994c5.324,5.328,7.994,11.8,7.994,19.417v9.131    c0,20.177-7.139,37.397-21.416,51.675c-14.274,14.271-31.494,21.409-51.675,21.409h-18.274c-4.948,0-9.233,1.813-12.847,5.427    c-3.617,3.614-5.428,7.898-5.428,12.847v36.549c0,4.941,1.811,9.233,5.428,12.848c3.613,3.613,7.898,5.427,12.847,5.427h18.274    c19.794,0,38.684-3.86,56.674-11.566c17.984-7.707,33.541-18.131,46.676-31.265c13.134-13.135,23.562-28.695,31.265-46.679    c7.706-17.983,11.563-36.877,11.563-56.671V91.361C475.078,76.131,469.753,63.19,459.089,52.534z"></path> </g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>
+                    </div>
+                    <div class="test-content-detail">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut hic fuga, deserunt , aperiam voluptate cum ut animi molestiae possimus inventore recusandae sequi
+                    </div>
+                    <div class="test-content-user">
+                        <div class="user-img">
+                            <img src="img/about/1.jpg" />
+                        </div>
+                        <div class="user-detail">
+                            <div class="user-name">
+                                Nelly Furtado
+                            </div>
+                            <div class="user-job">
+                                Web Developer
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="test-content-right">
+                    <div class="test-content-1">
+                        <div class="wrapper-client-img" id="nelly">
+                            <img src="./img/about/1.jpg" class="client-img" />
+                            <div class="client-img-overlay">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="test-content-2">
+                        <div class="wrapper-client-img" id="brian">
+                            <img src="./img/about/2.jpg" class="client-img" />
+                            <div class="client-img-overlay">
+                            </div>
+                        </div>
+                        <div class="wrapper-client-img" id="steve">
+                            <img src="./img/about/3.jpg" class="client-img" />
+                            <div class="client-img-overlay">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="news" id="news">
+        <div class="wrapper">
+            <div class="feature-header">
+                NEWS
+                <div class="feature-header-content">
+                    LATEST NEWS
+                </div>
+            </div>
+            <div class="news-content">
+                <div class="news-card l-4" id="open-new-1">
+                    <div class="card-img">
+                        <img src="./img/news/1.jpg" />
+                    </div>
+                    <div class="card-wrapper">
+                        <div class="card-header">
+                            By Alex Watson / 10 May 2021
+                        </div>
+                        <div class="line"></div>
+                        <div class="card-content">
+                            Developers watch out for these burnout symtoms
+                        </div>
+                    </div>
+                </div>
+                <div class="news-card l-4" id="open-new-2">
+                    <div class="card-img">
+                        <img src="./img/news/2.jpg" />
+                    </div>
+                    <div class="card-wrapper">
+                        <div class="card-header">
+                            By Alex Watson / 10 May 2021
+                        </div>
+                        <div class="line"></div>
+                        <div class="card-content">
+                            Developers watch out for these burnout symtoms
+                        </div>
+                    </div>
+                </div>
+                <div class="news-card l-4" id="open-new-3">
+                    <div class="card-img">
+                        <img src="./img/news/3.jpg" />
+                    </div>
+                    <div class="card-wrapper">
+                        <div class="card-header">
+                            By Alex Watson / 10 May 2021
+                        </div>
+                        <div class="line"></div>
+                        <div class="card-content">
+                            Developers watch out for these burnout symtoms
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contact" id="contact">
+        <div class="wrapper">
+            <div class="feature-header">
+                CONTACT
+                <div class="feature-header-content">
+                    GET IN TOUCH
+                </div>
+            </div>
+            <div class="contact-header">
+                Please fill out the form on this section to contact with me. Or call between 9:00 a.m. and 8:00 p.m. ET, Monday through Friday
+            </div>
+            <div class="contact-content">
+                <div class="contact-content-left">
+                    <input type="text" placeholder="Name" />
+                    <input type="text" placeholder="Email" />
+                    <textarea placeholder="Message"></textarea>
+                    <button>
+                       Send Message
+                    </button>
+                </div>
+                <div class="contact-content-right">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.104562596159!2d106.62328489134399!3d10.803303066813019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752bfcc59e176f%3A0x9a28d19d6c4032a3!2zMzAsIDMwNC81Mi80LzUgxJDhu5cgTmh14bqtbiwgU8ahbiBL4buzLCBUw6JuIFBow7osIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1634109824406!5m2!1svi!2s"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="wrapper">
+            <div class="footer-name">
+                THE NGOC
+                <br/> PORTFOLIO TEMPLATE
+            </div>
+            <div class="footer-address">
+                Brook 103,
+                <br/> 90021 New York, USA
+            </div>
+            <div class="footer-contact">
+                hi@waxson.com,
+                <br/> +84 33 8016 618
+            </div>
+            <div class="footer-social">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="96.124px" height="96.123px" viewBox="0 0 96.124 96.123" style="enable-background:new 0 0 96.124 96.123;" xml:space="preserve"
+                        class="svg replaced-svg"> <g> <path d="M72.089,0.02L59.624,0C45.62,0,36.57,9.285,36.57,23.656v10.907H24.037c-1.083,0-1.96,0.878-1.96,1.961v15.803   c0,1.083,0.878,1.96,1.96,1.96h12.533v39.876c0,1.083,0.877,1.96,1.96,1.96h16.352c1.083,0,1.96-0.878,1.96-1.96V54.287h14.654   c1.083,0,1.96-0.877,1.96-1.96l0.006-15.803c0-0.52-0.207-1.018-0.574-1.386c-0.367-0.368-0.867-0.575-1.387-0.575H56.842v-9.246   c0-4.444,1.059-6.7,6.848-6.7l8.397-0.003c1.082,0,1.959-0.878,1.959-1.96V1.98C74.046,0.899,73.17,0.022,72.089,0.02z"></path> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>
+                </a>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

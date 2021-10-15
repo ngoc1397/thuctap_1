@@ -1,0 +1,1094 @@
+:root {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.wrapper {
+    width: 1220px;
+    margin: 0 auto;
+}
+
+
+/* modal css */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    display: none;
+    animation: popup 0.2s linear;
+}
+
+
+/* modal image display */
+
+#btn-pre {
+    width: 90px;
+    height: 100px;
+    position: absolute;
+    background: none;
+    border: none;
+    outline: none;
+    left: 0;
+}
+
+#btn-pre:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+#btn-pre::after {
+    content: "";
+    position: absolute;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-right: 15px solid white;
+}
+
+#btn-next {
+    width: 90px;
+    height: 100px;
+    position: absolute;
+    background: none;
+    border: none;
+    outline: none;
+    right: 0;
+}
+
+#btn-next:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+#btn-next::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid white;
+    border-right: 15px solid transparent;
+}
+
+#modal-img .modal-img-img {
+    max-height: 90vh;
+    width: 60vw;
+    overflow: hidden;
+    position: relative;
+}
+
+#modal-img .modal-img-img .close-img-button {
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#modal-img .modal-img-img-footer {
+    color: rgb(231, 231, 231);
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    padding: 5px;
+    background-color: #777;
+    border-radius: 5px;
+}
+
+#btn-close-img:hover {
+    cursor: pointer;
+}
+
+#modal-img .modal-img-img .close-img-button svg {
+    width: 100%;
+    height: 100%;
+}
+
+#modal-img .modal-img-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+
+/* modal video display */
+
+.modal-video {
+    width: 900px;
+    height: 510px;
+    position: relative;
+}
+
+.close-video-button {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    background-color: #F8F9FA;
+    right: -30px;
+}
+
+.close-video-button:hover {
+    cursor: pointer;
+}
+
+.close-video-button svg {
+    width: 100%;
+    height: 100%;
+}
+
+.modal-video iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.show-modal {
+    display: flex;
+}
+
+.modal {
+    background-color: white;
+    width: 980px;
+    box-sizing: border-box;
+    position: relative;
+    height: 580px;
+    max-width: 980px;
+    overflow-y: scroll;
+}
+
+.modal::-webkit-scrollbar {
+    display: none;
+}
+
+.modal.modal-more {
+    padding: 100px 70px;
+}
+
+.modal.modal-more .more-skill {
+    display: flex;
+    gap: 100px;
+}
+
+.modal.modal-more .more-skill .skill-header {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+
+.modal.modal-more .more-skill .program-skill {
+    flex: 1;
+}
+
+.modal.modal-more .more-skill .lang-skill {
+    flex: 1;
+}
+
+.skill-percent {
+    margin-bottom: 15px;
+}
+
+.skill-percent .skill-percent-top {
+    display: flex;
+    flex-direction: row;
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: italic;
+    color: rgb(83, 83, 83);
+    justify-content: space-between;
+}
+
+#react {
+    width: 80%;
+}
+
+#html {
+    width: 90%;
+}
+
+#japan {
+    width: 90%;
+}
+
+#abra {
+    width: 85%;
+}
+
+.skill-percent .skill-percent-bottom {
+    padding: 10px 0px;
+}
+
+.skill-line {
+    background-color: rgb(212, 212, 212);
+    width: 100%;
+    height: 3px;
+}
+
+.skill-line .skill-line-percent {
+    width: 95%;
+    height: 100%;
+    background-color: #000000;
+}
+
+.more-fact-content {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: space-around;
+}
+
+.more-fact-content .fact-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 240px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    height: 140px;
+}
+
+.more-fact-content .fact-item .fact-item-header {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.more-fact-header {
+    margin: 25px 0px;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.more-fact-content .fact-item .fact-item-content {
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: italic;
+    color: #777;
+}
+
+.more-partner-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    overflow-x: scroll;
+    flex-wrap: nowrap;
+}
+
+.more-partner-content::-webkit-scrollbar {
+    display: none;
+}
+
+.close-button {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 70px;
+    background-color: white;
+    right: 200px;
+    border-radius: 50%;
+}
+
+.close-button:hover {
+    cursor: pointer;
+}
+
+.close-button svg {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+}
+
+
+/* modal news */
+
+.modal.modal-news {
+    padding: 70px;
+}
+
+.modal.modal-news .modal-news-img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 50px;
+}
+
+.modal.modal-news .modal-news-des {
+    font-size: 1rem;
+    font-weight: 300;
+    font-style: italic;
+    color: #666;
+}
+
+.modal.modal-news .modal-news-des div:nth-child(1) {
+    margin-bottom: 10px;
+}
+
+.modal.modal-news .modal-news-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.modal.modal-news .modal-news-content>* {
+    margin-top: 30px;
+    text-align: justify;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    color: #777;
+}
+
+.modal.modal-news .modal-news-content .modal-news-header {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.modal.modal-news .modal-news-content .modal-news-header-2 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+.modal.modal-news .modal-news-content .modal-news-quote {
+    clear: both;
+}
+
+.modal.modal-news .modal-news-content .modal-news-quote .modal-news-quote-text {
+    font-size: 1.4rem;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.8rem;
+}
+
+.modal.modal-news .modal-news-content .modal-news-quote .modal-news-quote-img {
+    width: 50px;
+    margin-right: 20px;
+    float: left;
+    height: 100%;
+}
+
+.modal.modal-news .modal-news-content .modal-news-quote .modal-news-quote-img svg {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* fallin effect */
+
+.dot {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    background: url(http://www.clipartqueen.com/image-files/red-lobed-fall-clipart-leaf.png);
+    background-size: 100% 100%;
+}
+
+.option-button {
+    position: fixed;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background-color: #000000;
+    top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.option-button img {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    color: white;
+    animation: spin 4s linear infinite;
+}
+
+.background {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.background-img {
+    position: absolute;
+    z-index: -1;
+    left: 28vw;
+}
+
+.background-img img {
+    width: calc(100vw - 28vw);
+    height: 100vh;
+    object-fit: cover;
+}
+
+.header {
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+}
+
+.header .wrapper {
+    height: 70px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header .logo {
+    width: 70px;
+    height: 40px;
+}
+
+.header .logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.header .menu {
+    display: flex;
+    font-size: 1.2rem;
+    flex-direction: row;
+    gap: 36px;
+}
+
+.header .menu li a {
+    text-decoration: none;
+    color: black;
+}
+
+.holder {
+    background: #F8F9FA;
+    transition: all 0.5s;
+}
+
+.header .menu-icon {
+    width: 30px;
+    height: 30px;
+    display: none;
+}
+
+.menu-icon ion-icon {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* intro css */
+
+.intro .wrapper {
+    display: flex;
+    height: calc(100vh - 70px);
+    justify-content: center;
+    flex-direction: column;
+    gap: 45px;
+    align-items: flex-start;
+}
+
+.intro-name {
+    color: white;
+    font-size: 7rem;
+    font-weight: 700;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.7);
+}
+
+.intro-address {
+    font-size: 7rem;
+    font-weight: 700;
+}
+
+.intro-detail {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #666;
+    font-weight: 500;
+}
+
+
+/* css for detail */
+
+.detail .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: calc(100vh - 70px);
+    gap: 80px;
+    align-items: center;
+}
+
+.detail-img {
+    width: 490px;
+    height: 440px;
+    position: relative;
+}
+
+.detail-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    position: absolute;
+    /* animation: scrollUp 0.5s linear infinite; */
+}
+
+@keyframes scrollUp {
+    from {
+        top: 0;
+    }
+    to {
+        top: -2%;
+    }
+}
+
+@keyframes scrollDown {
+    from {
+        bottom: 0;
+    }
+    to {
+        bottom: -2%;
+    }
+}
+
+.detail-content {
+    display: flex;
+    flex: 1;
+    gap: 40px;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.detail-content-header {
+    width: 100%;
+    position: relative;
+}
+
+.detail-header-about {
+    font-size: 9rem;
+    font-weight: 900;
+    line-height: 105px;
+    color: white;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.2);
+}
+
+.detail-header-name {
+    font-size: 2.5rem;
+    color: black;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 700;
+}
+
+.detail-header-detail {
+    font-style: italic;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #666;
+}
+
+.detail-content hr {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.detail-content-intro {
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 36px;
+    color: #777;
+}
+
+.detail-content-intro p:nth-child(1) {
+    margin-bottom: 10px;
+}
+
+.detail-content-more button {
+    padding: 22px 50px;
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+    box-sizing: border-box;
+    font-style: italic;
+    border: 2px solid black;
+    outline: none;
+    transition: 0.5s;
+}
+
+.detail-content-more button:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
+
+.service .wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 130px;
+    margin-bottom: 130px;
+}
+
+.service .service-item {
+    display: flex;
+    margin-bottom: 10px;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.service-item .item-icon {
+    width: 50px;
+}
+
+.service-item .item-icon svg {
+    width: 50px;
+    height: 50px;
+}
+
+.service-item .item-detail .item-detail-header {
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.service-item .item-detail .item-detail-content {
+    font-style: italic;
+    line-height: 30px;
+    color: #777;
+}
+
+
+/* feature css */
+
+.feature {
+    width: 100%;
+    background-color: #F8F9FA;
+    padding: 150px 0px;
+}
+
+.feature-header {
+    font-size: 10rem;
+    color: transparent;
+    font-weight: 900;
+    margin-bottom: 100px;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.feature-header .feature-header-content {
+    font-size: 3rem;
+    font-weight: 600;
+    color: black;
+    position: absolute;
+    top: 55%;
+    left: 8px;
+}
+
+.feature-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.item {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.item .item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.item .item-img {
+    width: 100%;
+    height: 377px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.item-img:hover img {
+    transform: scale(110%);
+    transition: all 0.3s linear;
+}
+
+.item .item-header {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.item .item-des {
+    font-style: italic;
+    color: #777;
+}
+
+
+/* css test */
+
+.test {
+    width: 100%;
+    padding: 150px 0px;
+}
+
+.test-content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.test-content-left {
+    display: flex;
+    flex: 1;
+    gap: 30px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.test-content-right {
+    display: grid;
+    flex: 1;
+}
+
+@keyframes popup {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.test-content-left .test-content-logo {
+    width: 50px;
+    height: 50px;
+}
+
+.test-content-left .test-content-logo svg {
+    width: 100%;
+    height: 100%;
+}
+
+.test-content-left .test-content-detail {
+    font-style: italic;
+    color: #777;
+    line-height: 30px;
+}
+
+.test-content-user {
+    display: flex;
+}
+
+.test-content-user .user-img {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+}
+
+.test-content-user .user-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.wrapper-client-img {
+    position: relative;
+}
+
+.client-img-overlay {
+    position: absolute;
+    top: 0;
+    animation: popup 0.3s linear;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.29);
+}
+
+.show {
+    display: block;
+}
+
+.user-detail {
+    display: flex;
+    margin-left: 30px;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.test-content-user .user-name {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.test-content-user .user-job {
+    font-style: italic;
+    color: #777;
+}
+
+.test-content-right {
+    display: flex;
+    gap: 50px;
+}
+
+.test-content-right .test-content-1 {
+    flex: 1;
+}
+
+.test-content-right .test-content-1 img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+}
+
+.test-content-right .test-content-2 {
+    flex: 1;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+}
+
+.test-content-right .test-content-2 img:nth-child(1) {
+    width: 100%;
+    object-fit: cover;
+    height: 200px;
+}
+
+.test-content-right .test-content-2 img:nth-child(2) {
+    width: 100%;
+    object-fit: cover;
+    height: 220px;
+}
+
+
+/* css news */
+
+.news {
+    width: 100%;
+    padding: 150px 0px;
+    background-color: #F8F9FA;
+}
+
+.news-content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.news-content .news-card {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.news-content .news-card .card-img {
+    height: 280px;
+    overflow: hidden;
+}
+
+.news-content .news-card .card-img:hover img {
+    transform: scale(110%);
+    transition: 0.5s ease-in-out;
+}
+
+.news-content .news-card .card-img img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.card-wrapper {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 30px;
+}
+
+.line {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.19);
+}
+
+.card-wrapper .card-header {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.card-wrapper .card-content {
+    line-height: 30px;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+
+/* css for contact */
+
+.contact {
+    width: 100%;
+    font-size: 1rem;
+    padding: 150px 0px;
+}
+
+.contact .wrapper {
+    padding: 10px;
+}
+
+.contact-header {
+    width: 50%;
+    font-style: italic;
+    color: #777;
+    margin-bottom: 60px;
+    line-height: 32px;
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.contact-content-left {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex: 1;
+}
+
+.contact-content-left input {
+    padding: 12px 15px;
+    display: block;
+    outline: none;
+    font-style: italic;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.contact-content-left input:focus {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.contact-content-left textarea {
+    padding: 12px 15px;
+    display: block;
+    font-style: italic;
+    outline: none;
+    height: 120px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.contact-content-left textarea:focus {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.contact-content-left button {
+    padding: 24px 52px;
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+    border: 2px solid black;
+    box-sizing: border-box;
+    font-style: italic;
+    width: 220px;
+    outline: none;
+}
+
+.contact-content-left button:hover {
+    background-color: white;
+    color: black;
+    transition: 0.5s;
+    border: 2px solid black;
+}
+
+.contact-content-right {
+    flex: 1;
+}
+
+.footer .wrapper {
+    color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    line-height: 32px;
+    height: 240px;
+    background: #000000;
+}
+
+.footer-social {
+    display: flex;
+    width: 200px;
+    background: white;
+    height: 10px;
+    color: white;
+    flex-direction: row;
+}
+
+.footer-social a svg {
+    width: 15px;
+    height: 15px;
+}
+
+
+/* resposive */
+
+@media(max-width:791px) {
+    .wrapper {
+        width: 95%;
+        margin: 0 auto;
+    }
+    .contact-content-right iframe {
+        display: block;
+        width: 92vw;
+    }
+    .header .menu {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        display: block;
+        background-color: #666;
+        color: white;
+        right: -100%;
+    }
+    .header .menu li {
+        width: 100%;
+    }
+    .header .menu li a {
+        color: white;
+    }
+    .header .menu-icon {
+        display: block;
+    }
+}
